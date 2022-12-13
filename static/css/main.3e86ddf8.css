@@ -1,0 +1,2 @@
+@import url(https://fonts.googleapis.com/css2?family=Bellefair&display=swap);:root{--primary-color:#2a2b2a;--secondary-color:#9cebb3;--fontFamily:"Bellefair",sans-serif}body{background:linear-gradient(135deg,#2a2b2a,#9cebb3);background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));color:#fff;font-family:Bellefair,sans-serif;font-family:var(--fontFamily)}
+/*# sourceMappingURL=main.3e86ddf8.css.map*/
