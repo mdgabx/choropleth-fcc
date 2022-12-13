@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import Chart from "./components/chart";
+
 
 function App() {
+  
+  // api endpoints for the data 
+  const educDataUrl = "https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json";
+  const countyDataUrl = "https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json";
+
+  const fetchEducData = (url) => {
+    
+  }
+
+  const fetchCountyDataUrl = (url) => {
+
+  }
+  
+  useEffect(() => {
+    fetchEducData(educDataUrl);
+    fetchCountyDataUrl(countyDataUrl);
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Chart />
     </div>
   );
 }
