@@ -10,4 +10,6 @@ body {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: #fff;
   font-family: var(--fontFamily);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
