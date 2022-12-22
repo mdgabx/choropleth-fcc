@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 :root {
-  --primary-color: #2a2b2a;
-  --secondary-color: #9cebb3;
-  --fontFamily: 'Bellefair', sans-serif;
+  --primary-color: #2a2b2b;
+  --secondary-color: #112353;
+  --fontFamily: 'Questrial', sans-serif;
 }
 
 body {
@@ -11,5 +11,20 @@ body {
   color: #fff;
   font-family: var(--fontFamily);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.svg-chart {
+  margin: auto;
+  background: #fff;
+  border-radius: 17px;
+  margin: 3rem 0;
+  padding: 2rem;
 }
