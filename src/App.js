@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Chart from "./components/chart";
-
-
+import * as topojson from "topojson-client";
 
 function App() {
   
@@ -23,7 +22,13 @@ function App() {
   const fetchCountyDataUrl = (url) => {
     fetch(url)
     .then(response => response.json())
-    .then(data => setCountyData(data))
+    .then(data => {
+       let geoData = topojson.feature(data, data.objects.counties).features
+
+       setCountyData(geoData);
+
+    //  setCountyData(topojson.feature(data, data.objects.counties))
+    })
   }
   
   useEffect(() => {

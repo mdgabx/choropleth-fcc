@@ -1,16 +1,22 @@
 import * as d3 from 'd3';
 
+
 const Chart = (props) => {
 
     if(props !== undefined || props !== null) {
-        const educData = props.educData;
+
+        const educData =  props.educData;
         const countyData = props.countyData;
+
+        console.log('educData', educData);
+        console.log('countyData', countyData);
+
 
         const w = 400;
         const h = 400;
         const padding = 50;
 
-        d3.select(".svg-chart")
+       const svg =  d3.select(".svg-chart")
             .append("svg")
             .attr("width", w)
             .attr("height", h)
