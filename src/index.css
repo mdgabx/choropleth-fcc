@@ -27,4 +27,13 @@ body {
   border-radius: 17px;
   margin: 3rem 0;
   padding: 2rem;
+  position: relative;
+}
+
+#tooltip {
+  visibility: hidden; 
+  background: rgba(0,0,0,0.8);
+  padding: 0.8em 1.4em;
+  border-radius: 12px;
+  position: absolute;
 }

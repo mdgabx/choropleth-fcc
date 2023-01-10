@@ -14,8 +14,9 @@ const Chart = (props) => {
 
         const w = 1000;
         const h = 650;
-
-       const svg =  d3.select(".svg-chart")
+        
+        const tooltip = d3.select("#tooltip");
+        const svg =  d3.select(".svg-chart")
             .append("svg")
             .attr("width", w)
             .attr("height", h)
@@ -52,6 +53,27 @@ const Chart = (props) => {
                 return percentageBachelor;
 
             })
+            .on('mouseover', (event, countyDataItem) => {
+                tooltip.transition().style('visibility', 'visible')
+                                    .style('position', 'absolute')
+                                    .style('top', event.screenX + "px")
+                                    .style('left', event.screenY - 100 + "px")
+                                    .style('padding', '')
+
+                console.log(countyDataItem)
+
+
+                let id = countyDataItem['id']
+                console.log('id', event)
+                let county = educData.find((item) => item["fips"] === id)
+                   
+            
+                tooltip.text(`Code - ${county['fips']} - Area: ${county['area_name']} | Bachelors - ${county['bachelorsOrHigher']}%`)
+
+            })
+            .on('mouseout', (countyDataItem) => {
+                tooltip.transition().style('visibility', 'hidden')
+            })
 
             
     }
@@ -81,6 +103,9 @@ const Chart = (props) => {
                     <text x="60" y="140" fill="white">greater than 45%</text>
                 </g>
             </svg>
+            <div id="tooltip">
+
+            </div>
         </div>
      );
 }
