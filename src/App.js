@@ -16,7 +16,11 @@ function App() {
   const fetchEducData = (url) => {
     fetch(url)
       .then(response => response.json())
-      .then(data => setEducData(data))
+      .then(data => {
+        if(data !== '' || data !== undefined || data !== null) {
+          setEducData(data)
+        }  
+      })
   }
 
   const fetchCountyDataUrl = (url) => {
@@ -25,7 +29,9 @@ function App() {
     .then(data => {
        let geoData = topojson.feature(data, data.objects.counties).features
 
-       setCountyData(geoData);
+       if(geoData !== '' || geoData !== null || geoData !== undefined) {
+        setCountyData(geoData);
+       } 
 
     //  setCountyData(topojson.feature(data, data.objects.counties))
     })

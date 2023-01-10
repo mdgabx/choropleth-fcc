@@ -3,14 +3,14 @@ import * as d3 from 'd3';
 
 const Chart = (props) => {
 
-    if(props !== undefined || props !== null || props !== '') {
+    console.log(props)
+    const educData =  props.educData;
+    const countyData = props.countyData;
 
-        const educData =  props.educData;
-        const countyData = props.countyData;
+    if(educData.length !== 0 && countyData.length !== 0) {
 
-        console.log('educData', educData);
-        console.log('countyData', countyData);
-
+        // console.log('educData', educData);
+        // console.log('countyData', countyData);
 
         const w = 1000;
         const h = 650;
@@ -26,6 +26,24 @@ const Chart = (props) => {
             .append('path')
             .attr('d', d3.geoPath())
             .attr('class', 'county')
+            .attr('fill', (countyDataItem) => {
+                let id = countyDataItem['id']
+                let county = educData.find((item) => item["fips"] === id)
+                let percentageBachelor = county["bachelorsOrHigher"]
+
+                if(percentageBachelor <= 15) {
+                    return 'red'
+                } else if (percentageBachelor <= 30) {
+                    return 'orange'
+                } else if (percentageBachelor <= 45) {
+                    return 'maroon'
+                } else {
+                    return 'green'
+                }
+
+            })
+
+            
     }
     
     return ( 
