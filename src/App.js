@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     fetchEducData(educDataUrl);
     fetchCountyDataUrl(countyDataUrl);
-  }, []);
+  }, [setCountyData, setEducData]);
 
   return (
     <div className="App">
