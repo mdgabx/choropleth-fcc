@@ -80,9 +80,6 @@ const Chart = (props) => {
         <div className="container">
             <h1 id="title">United States Educational Attainment</h1>
             <p id="description">Adults percentage with a bachelors degree and higher (2010-2014)</p>
-            <div className="svg-chart">
-              
-            </div>
             <svg id="legend">
                 <g>
                     <rect x="10" y="0" width="40" height="40" fill="red"></rect>
@@ -101,6 +98,10 @@ const Chart = (props) => {
                     <text x="60" y="140" fill="white">greater than 45%</text>
                 </g>
             </svg>
+            <div className="svg-chart">
+              
+            </div>
+         
             <div id="tooltip">
 
             </div>
