@@ -56,11 +56,8 @@ const Chart = (props) => {
             .on('mouseover', (event, countyDataItem) => {
                 tooltip.transition().style('visibility', 'visible')
                                     .style('position', 'absolute')
-                                    .style('top', event.screenX + "px")
-                                    .style('left', event.screenY - 100 + "px")
-                                    .style('padding', '')
-
-                console.log(countyDataItem)
+                                    .style('top', (event.offsetY + 150) + "px")
+                                    .style('left', (event.offsetX - 20) + "px")
 
 
                 let id = countyDataItem['id']
@@ -69,6 +66,7 @@ const Chart = (props) => {
                    
             
                 tooltip.text(`Code - ${county['fips']} - Area: ${county['area_name']} | Bachelors - ${county['bachelorsOrHigher']}%`)
+                tooltip.attr('data-education', county['bachelorsOrHigher'])
 
             })
             .on('mouseout', (countyDataItem) => {
